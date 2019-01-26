@@ -1,0 +1,19 @@
+.calcbox{
+    margin:auto;
+    width:1000px;
+}
+
+.cell{
+    margin:100px;
+    display:block;
+}
+.head{
+    width:50%;
+    text-align:right;
+    display:block;
+}
+.row{
+    border:black solid 3px;
+    width:50%;
+    display:block;
+}
