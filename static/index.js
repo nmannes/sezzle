@@ -15,6 +15,13 @@ var app = new Vue({
         expression:""
         
     },
+    mounted(){
+        var self = this
+        setInterval(function() {
+                self.getRecentData()
+            }, 500);
+
+    },
     delimiters: ['[[',']]'],
     methods: {
         push(char){
@@ -44,6 +51,7 @@ var app = new Vue({
 
         },
         getRecentData(){
+            console.log('getting')
             this.$http.get("http://localhost:5000/recent_data").then(response => {
                 this.recentdata = response.body
             }, (response) => {
