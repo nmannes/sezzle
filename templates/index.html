@@ -3,11 +3,12 @@
   <meta charset="UTF-8">
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="static/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <div id='helloworld'>
     
     <div class='calcbox'>
-        <table>
+        <table class='table table-striped'>
                 <tr class="head">[[expression]]</tr>
                 <tr class="row" v-for="i in keymap">
                     <td class="cell" v-for="obj in i" v-on:click="push(obj)">[[obj]] </td>
@@ -16,13 +17,12 @@
         </table>
     </div>
 
-    <h4> Recent Data (in order)</h4>
+    <h4 v-on:click="getRecentData()"> Recent Data (in order)</h4>
     <ul>
         <li v-for="obj in recentdata" >[[obj]]</li>
     </ul>
 </div>
 <script src="static/vue.js"></script>
-<script src="static/index.js"</script>
 <script src="static/vuehttp.js"></script>
-
+<script src="static/index.js"></script>
 </html>
